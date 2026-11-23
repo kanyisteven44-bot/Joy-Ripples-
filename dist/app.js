@@ -2,8 +2,10 @@ const $ = s => document.querySelector(s);
 const menu=$('.menu'),nav=$('nav'),motion=window.matchMedia('(prefers-reduced-motion: reduce)');
 function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});
+document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!menu.contains(e.target))closeMenu()});
+window.addEventListener('resize',()=>{if(window.innerWidth>700)closeMenu()});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus()}});
 document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click',()=>{if(!$('#plan')){window.location.href='contact.html?service='+encodeURIComponent(b.dataset.service)+'#plan';return}$('#service').value=b.dataset.service;$('#plan').scrollIntoView({behavior:motion.matches?'instant':'smooth'});$('#service').focus({preventScroll:true})}));
 $('#year').textContent=new Date().getFullYear();
 if($('#enquiry')){
