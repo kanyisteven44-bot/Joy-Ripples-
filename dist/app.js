@@ -10,6 +10,8 @@ document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click
 $('#year').textContent=new Date().getFullYear();
 if($('#enquiry')){
 const requested=new URLSearchParams(location.search).get('service');if([...$('#service').options].some(o=>o.value===requested))$('#service').value=requested;
+const hints={'Food & drinks':'Tell us about dietary needs or your preferred meal time.','Accommodation':'Share your planned arrival, departure and number of rooms.','Outside catering':'Include your event location, preferred menu and serving time.','Venue hire for events':'Tell us the occasion, preferred timing and setup you have in mind.','Team building':'Share your group goals, preferred timing and catering needs.'};
+function updateHint(){$('#service-hint').textContent=hints[$('#service').value]||''}$('#service').addEventListener('change',updateHint);updateHint();
 const today=new Date();$('#date').min=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
 let draft='';
 $('#enquiry').addEventListener('submit',e=>{
@@ -17,10 +19,11 @@ $('#enquiry').addEventListener('submit',e=>{
  const name=$('#name').value.trim();
  if(!name){$('#name').setCustomValidity('Please enter your name.');$('#name').reportValidity();return}
  const date=$('#date').value,guests=$('#guests').value;
- draft=`Hello Isaac, I would like to enquire about Joy Ripples Resort.\n\nName: ${name}\nService: ${$('#service').value}\nPreferred date: ${date}\nGuests: ${guests}\n${$('#details').value.trim() ? 'Details: '+$('#details').value.trim()+'\n' : ''}\nPlease confirm availability and rates. Thank you.`;
+ const recipient=$('#recipient').value==='joyce'?{name:'Joyce',phone:'254722165863'}:{name:'Isaac',phone:'254722693407'};
+ draft=`Hello ${recipient.name}, I would like to enquire about Joy Ripples Resort.\n\nName: ${name}\nService: ${$('#service').value}\nPreferred date: ${date}\nGuests: ${guests}\n${$('#details').value.trim() ? 'Details: '+$('#details').value.trim()+'\n' : ''}\nPlease confirm availability and rates. Thank you.`;
  const result=$('#result');result.hidden=false;result.replaceChildren();
  const note=document.createElement('p');note.textContent='Your enquiry is ready. Review and send it in WhatsApp. Your booking is confirmed only after the resort responds.';
- const link=document.createElement('a');link.href='https://wa.me/254722693407?text='+encodeURIComponent(draft);link.target='_blank';link.rel='noopener noreferrer';link.className='underlink';link.textContent='Open WhatsApp again';
+ const link=document.createElement('a');link.href='https://wa.me/'+recipient.phone+'?text='+encodeURIComponent(draft);link.target='_blank';link.rel='noopener noreferrer';link.className='underlink';link.textContent='Open WhatsApp again';
  result.append(note,link);$('#copy').hidden=false;
  window.open(link.href,'_blank','noopener,noreferrer');
 });
