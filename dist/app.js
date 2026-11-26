@@ -1,18 +1,19 @@
 const $ = s => document.querySelector(s);
 const menu=$('.menu'),nav=$('nav'),motion=window.matchMedia('(prefers-reduced-motion: reduce)');
-function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}
+function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');nav.querySelectorAll('details').forEach(d=>d.open=false)}
 menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});
 document.addEventListener('click',e=>{if(!nav.contains(e.target)&&!menu.contains(e.target))closeMenu()});
 window.addEventListener('resize',()=>{if(window.innerWidth>700)closeMenu()});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus()}});
+document.addEventListener('keydown',e=>{if(e.key!=='Escape')return;if(nav.classList.contains('open')){closeMenu();menu.focus()}else{const expanded=nav.querySelector('details[open]');if(expanded){expanded.open=false;expanded.querySelector('summary').focus()}}});
 document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click',()=>{if(!$('#plan')){window.location.href='contact.html?service='+encodeURIComponent(b.dataset.service)+'#plan';return}$('#service').value=b.dataset.service;$('#plan').scrollIntoView({behavior:motion.matches?'instant':'smooth'});$('#service').focus({preventScroll:true})}));
 $('#year').textContent=new Date().getFullYear();
 if($('#enquiry')){
-const requested=new URLSearchParams(location.search).get('service');if([...$('#service').options].some(o=>o.value===requested))$('#service').value=requested;
+const params=new URLSearchParams(location.search);const requested=params.get('service');if([...$('#service').options].some(o=>o.value===requested))$('#service').value=requested;
 const hints={'Food & drinks':'Tell us about dietary needs or your preferred meal time.','Accommodation':'Share your planned arrival, departure and number of rooms.','Outside catering':'Include your event location, preferred menu and serving time.','Venue hire for events':'Tell us the occasion, preferred timing and setup you have in mind.','Team building':'Share your group goals, preferred timing and catering needs.','Camping':'Include your arrival and departure dates, tent arrangements, meals and equipment needs.','Directions & arrival':'Tell us where you are travelling from and ask for the exact entrance pin.'};
 function updateHint(){$('#service-hint').textContent=hints[$('#service').value]||''}$('#service').addEventListener('change',updateHint);updateHint();
 const today=new Date();$('#date').min=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
+const preferred=params.get('date');if(preferred&&/^\d{4}-\d{2}-\d{2}$/.test(preferred)&&preferred>=$('#date').min){$('#date').value=preferred;if(!$('#date').checkValidity())$('#date').value=''}const count=Number(params.get('guests'));if(Number.isInteger(count)&&count>=1&&count<=10000)$('#guests').value=String(count);
 let draft='';
 $('#enquiry').addEventListener('submit',e=>{
  e.preventDefault();
@@ -49,3 +50,7 @@ reveals();motion.addEventListener('change',reveals);
 let scheduled=false;
 function updateScroll(){scheduled=false;const scroll=window.scrollY,max=document.documentElement.scrollHeight-window.innerHeight;$('.scroll-progress').style.transform=`scaleX(${max>0?scroll/max:0})`;$('header').classList.toggle('scrolled',scroll>20);const plan=$('#plan')?.getBoundingClientRect();$('.mobile-visit').classList.toggle('visible',scroll>window.innerHeight*.65&&(!plan||plan.top>window.innerHeight||plan.bottom<0))}
 window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateScroll)}},{passive:true});window.addEventListener('resize',updateScroll);updateScroll();
+
+// Accessible disclosure navigation: one submenu at a time.
+nav.querySelectorAll('details').forEach(group=>group.addEventListener('toggle',()=>{if(group.open)nav.querySelectorAll('details').forEach(other=>{if(other!==group)other.open=false})}));
+const plannerDate=document.querySelector('#visit-date');if(plannerDate){const day=new Date();plannerDate.min=[day.getFullYear(),String(day.getMonth()+1).padStart(2,'0'),String(day.getDate()).padStart(2,'0')].join('-')}

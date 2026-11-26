@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://joyripples.vercel.app/sitemap.xml

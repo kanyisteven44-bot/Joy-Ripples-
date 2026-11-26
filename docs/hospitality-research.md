@@ -40,3 +40,19 @@ The user supplies the Ngarua area / Laikipia–Baringo border context and confir
 Implemented dedicated accommodation, camping and team-building pages, arrival section and entrance-pin request, shared navigation and six home shortcuts. Existing menu search, filters, variants and cart retained. Camping joins the WhatsApp enquiry service list. New planning information distinguishes proposals from confirmed inclusions.
 
 The accommodation page uses one explicitly labelled stock bedroom for inspiration: https://images.unsplash.com/photo-1611892440504-42a792e24d32 . It does not depict Joy Ripples; no official star rating is claimed. Actual supplied property photos remain the primary imagery. Replace stock with approved room photos when available.
+
+## Guest experience refinement after broader benchmark review
+
+Scope: a representative hospitality benchmark, not a claim to have reviewed most hotels globally. Reviewed official content and navigation from The Hoxton Shepherd’s Bush, Our Habitas, Singita, Enashipai, Panari Nyahururu, Hemingways Nairobi and Sarova Catering. Angama search results were available but opening its homepage returned 403, so no visual conclusions were drawn from it. Live browser screenshots inspected for Habitas, The Hoxton and Enashipai.
+
+| Source | Observed pattern | Joy Ripples adaptation |
+|---|---|---|
+| https://www.ourhabitas.com/ | Immersive opening imagery, spare navigation, experience-led storytelling | Actual garden image with concise hero copy and clear paths into experiences |
+| https://thehoxton.com/london/shepherds-bush/ | Distinct hotel, rooms, restaurants and meetings paths; prominent primary booking action | Grouped Stay & Camp and Experiences menus, one primary visit action |
+| https://singita.com/ | Lodges/experiences imagery, photo galleries and trip-planning route | Stronger photo hierarchy and direct gallery/visit-planning routes |
+| https://www.enashipai.com/ | Image-led resort introduction and grouped accommodation/event/dining navigation | Quieter header, larger photo stories and separate guest journeys |
+| https://www.panarihotels.com/resort-nyahururu/ | Accommodation, dining, meetings and practical contact/booking paths | Clear service links and factual visit guidance |
+| https://www.hemingways-collection.com/nairobi/ | Visible booking entry alongside stay, location and dining navigation | Homepage enquiry planner; explicitly an enquiry rather than live availability |
+| https://www.sarovahotels.com/catering.html | Dedicated catering proposition and event requirements | Food-led catering feature linked to the existing quote planner |
+
+Decisions: rebuilt homepage with a visit enquiry planner, editorial welcome, three photo-led experience cards, separate stay/team stories, catering feature, actual photo gallery glimpse and practical arrival FAQs. Preserved espresso/ivory/copper palette and menu/cart functionality. Removed the mistaken investment page, enquiry script and all public investment/partnership links. Kept About and a guest-facing printable resort overview. No borrowed hotel amenities, ratings, room details, testimonials or price claims.

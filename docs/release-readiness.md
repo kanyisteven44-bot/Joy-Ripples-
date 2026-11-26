@@ -35,3 +35,9 @@ Added About, Investment & Partnerships and printable Resort Overview pages. Adde
 Validation: 14 pages pass local headings, IDs, links and asset checks. Existing contact/cart/catering regression checks pass. New partnership tests pass for both recipients, international text encoding, required fields and stale result invalidation. Browser verifies enquiry-topic selection and phone layout at 320/390 px for Home, About, Investment and Overview (eight combinations), with no horizontal overflow. Print action and print-specific layout are implemented; actual PDF output was not visually inspected.
 
 This is an investor introduction website, not an evidence-backed investment prospectus. Owner-verified legal identity, operating evidence, funding ask and use of funds remain required for a substantive investment case.
+
+## Guest-first hospitality refinement
+
+Removed the off-brief investment page, public links, introduction script and its test/checklist. Retained a guest-focused About page and printable resort overview. Rebuilt the homepage around an enquiry planner, editorial resort welcome, camping/dining/celebration cards, stay and team stories, catering feature, actual-photo gallery and practical arrival FAQs. Shared grouped navigation reduces top-level choices and supports keyboard disclosure/escape. Added sitemap and robots declarations for the actual public guest pages.
+
+Checks: 13 pages pass headings, links, IDs and assets. Existing enquiry regression checks pass. Browser verifies planner service/date/guest handoff, desktop and phone submenu navigation; Home, Camping, Dining and Contact fit 320/390px iframe widths without horizontal overflow. No WhatsApp messages sent.
