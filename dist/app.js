@@ -10,7 +10,7 @@ document.querySelectorAll('[data-service]').forEach(b=>b.addEventListener('click
 $('#year').textContent=new Date().getFullYear();
 if($('#enquiry')){
 const requested=new URLSearchParams(location.search).get('service');if([...$('#service').options].some(o=>o.value===requested))$('#service').value=requested;
-const hints={'Food & drinks':'Tell us about dietary needs or your preferred meal time.','Accommodation':'Share your planned arrival, departure and number of rooms.','Outside catering':'Include your event location, preferred menu and serving time.','Venue hire for events':'Tell us the occasion, preferred timing and setup you have in mind.','Team building':'Share your group goals, preferred timing and catering needs.'};
+const hints={'Food & drinks':'Tell us about dietary needs or your preferred meal time.','Accommodation':'Share your planned arrival, departure and number of rooms.','Outside catering':'Include your event location, preferred menu and serving time.','Venue hire for events':'Tell us the occasion, preferred timing and setup you have in mind.','Team building':'Share your group goals, preferred timing and catering needs.','Camping':'Include your arrival and departure dates, tent arrangements, meals and equipment needs.','Directions & arrival':'Tell us where you are travelling from and ask for the exact entrance pin.'};
 function updateHint(){$('#service-hint').textContent=hints[$('#service').value]||''}$('#service').addEventListener('change',updateHint);updateHint();
 const today=new Date();$('#date').min=[today.getFullYear(),String(today.getMonth()+1).padStart(2,'0'),String(today.getDate()).padStart(2,'0')].join('-');
 let draft='';
