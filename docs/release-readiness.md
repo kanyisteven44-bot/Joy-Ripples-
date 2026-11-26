@@ -41,3 +41,9 @@ This is an investor introduction website, not an evidence-backed investment pros
 Removed the off-brief investment page, public links, introduction script and its test/checklist. Retained a guest-focused About page and printable resort overview. Rebuilt the homepage around an enquiry planner, editorial resort welcome, camping/dining/celebration cards, stay and team stories, catering feature, actual-photo gallery and practical arrival FAQs. Shared grouped navigation reduces top-level choices and supports keyboard disclosure/escape. Added sitemap and robots declarations for the actual public guest pages.
 
 Checks: 13 pages pass headings, links, IDs and assets. Existing enquiry regression checks pass. Browser verifies planner service/date/guest handoff, desktop and phone submenu navigation; Home, Camping, Dining and Contact fit 320/390px iframe widths without horizontal overflow. No WhatsApp messages sent.
+
+## Photographic visual refinement
+
+Added a dedicated visual stylesheet: photographic dining, contact and gallery mastheads; image-backed closing sections; layered home welcome photographs; larger story images; refined typography, crops and subtle backgrounds. Preserved the approved brown/ivory/copper palette and real resort photographs. Phone dining tabs now wrap instead of showing a horizontal scrollbar.
+
+Checks: all 13 pages and local photo assets pass. Browser inspected dining masthead and phone photo/text treatment. Home, Dining, Contact and Gallery fit 320/390px iframe widths without horizontal page overflow. No business content or enquiry logic changed.

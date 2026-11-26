@@ -1,0 +1,37 @@
+/* A consistent photographic treatment across the resort's guest pages. */
+:root{--photo-shade:linear-gradient(90deg,rgba(32,22,16,.84),rgba(32,22,16,.48) 60%,rgba(32,22,16,.18))}
+.contact-intro,.gallery-title,.shop-intro{position:relative;isolation:isolate;overflow:hidden;color:#fff8ee;text-align:left;min-height:470px;display:flex;flex-direction:column;justify-content:center;padding:80px 8%;background:#35251f}
+.contact-intro:before,.gallery-title:before,.shop-intro:before{content:'';position:absolute;inset:0;z-index:-2;background-size:cover;background-repeat:no-repeat}
+.contact-intro:before{background-image:url('assets/resort-lawn.webp');background-position:center 75%}
+.gallery-title:before{background-image:url('assets/garden-picnic.webp');background-position:center 50%}
+.shop-intro:before{background-image:url('assets/breakfast.webp');background-position:center 58%}
+.contact-intro:after,.gallery-title:after,.shop-intro:after{content:'';position:absolute;inset:0;z-index:-1;background:var(--photo-shade)}
+.contact-intro h1,.gallery-title h1,.shop-intro h1{font-size:clamp(52px,5.8vw,86px);line-height:1.1;letter-spacing:-2px;max-width:850px;margin:0}
+.contact-intro h1 em,.gallery-title h1 em,.shop-intro h1 em{color:#edc29a}
+.contact-intro p:not(.eyebrow),.gallery-title p:not(.eyebrow),.shop-intro p:not(.eyebrow){color:#fff2e4;max-width:580px;font-size:17px;line-height:1.85;margin:25px 0 0}
+.shop-intro{flex-direction:row;align-items:center;justify-content:space-between;gap:35px;min-height:470px}
+.shop-intro #view-cart{flex-shrink:0;border:1px solid #e4c4a4;background:#fff8ee;color:#35251f;min-height:52px;padding:15px 25px}
+.shop-intro #view-cart:hover{background:#e8d8c5}
+.gallery-title{min-height:490px}.gallery-title:after{background:linear-gradient(90deg,#201610e8,#20161092 60%,#20161050)}
+.guest-finale,.closing{position:relative;isolation:isolate;overflow:hidden;background:#35251f;color:#fff4e4;padding-block:100px}
+.guest-finale:before,.closing:before{content:'';position:absolute;inset:0;z-index:-2;background:url('assets/resort-lawn.webp') center 77%/cover}
+.guest-finale:after,.closing:after{content:'';position:absolute;inset:0;z-index:-1;background:#241811b8}
+.guest-finale em,.closing em{color:#edc29a}.closing .button.light{background:#a55c36;border:1px solid #cf936b}.guest-finale .button{border:1px solid #cf936b}
+.welcome-photo{isolation:isolate;padding-right:65px;padding-bottom:40px}.welcome-photo>img:first-child{height:560px;object-position:center 50%}
+.welcome-photo .welcome-inset{position:absolute;width:46%;height:205px;right:0;bottom:75px;border:8px solid var(--paper);object-fit:cover;box-shadow:0 12px 30px #35251f18}
+.welcome-photo span{margin-top:24px;padding-right:40px;line-height:1.6}
+.welcome-copy h2{font-size:clamp(39px,4.3vw,61px)}.signature-experiences .section-heading h2,.glimpse-section .section-heading h2{font-size:clamp(39px,4.2vw,59px)}
+.signature-image{position:relative}.signature-image:after{content:'';position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#35251f33);pointer-events:none}
+.signature-card .underlink{transition:color .2s}.signature-card:hover .underlink{color:#a55c36}.signature-card h3{letter-spacing:-.5px}
+.stay-team-stories img{height:440px}.stay-team-stories article>div{padding:60px 12%}.stay-team-stories article:first-child{background:radial-gradient(ellipse at top right,#65422d55,transparent 75%),#35251f}
+.catering-photo-pair{gap:22px}.catering-photo-pair img:first-child{height:490px}.catering-photo-pair img:last-child{border:7px solid var(--paper);box-shadow:0 10px 30px #35251f14;transform:translateX(-15px);width:calc(100% + 15px)}
+.journey-hero{position:relative;isolation:isolate}.journey-hero>div{background:radial-gradient(ellipse at bottom left,#a9693430,transparent 75%)}.journey-hero>img{min-height:620px;object-position:center 50%}.journey-hero .eyebrow{color:#ead5bf}.journey-hero h1{font-size:clamp(48px,4.9vw,80px)}
+.planning-card{background:linear-gradient(135deg,#fbf6ee,#f0e4d5);border-color:#dfcbb7}.planning-card h3{letter-spacing:-.5px}.planning-faq{background:var(--paper)}
+.cater-hero>div{background:radial-gradient(ellipse at top left,#a9693433,transparent 70%)}.cater-hero>img{object-position:center 47%}.cater-hero h1{font-size:clamp(48px,5.3vw,82px)}
+.resort-service img{transition:transform .55s}.resort-service{overflow:hidden}.resort-service:hover img{transform:scale(1.025)}.regional-story img{height:470px}
+.contact-block>a,.partner-people>a{transition:background .2s}.contact-block>a:hover{background:#f1e8dc}.site-footer .brand{max-width:100%}.site-footer{padding-top:65px}
+@media(max-width:1050px) and (min-width:701px){.contact-intro,.gallery-title,.shop-intro{padding-inline:6%}.welcome-photo{padding-right:35px}.welcome-photo>img:first-child{height:480px}.welcome-photo .welcome-inset{height:170px;border-width:6px}.stay-team-stories img{height:350px}.stay-team-stories article>div{padding:45px 8%}.shop-intro{align-items:flex-start;flex-direction:column;gap:28px}.journey-hero>img{min-height:580px}}
+@media(max-width:700px){.contact-intro,.gallery-title,.shop-intro{min-height:430px;padding:55px 22px}.contact-intro h1,.gallery-title h1,.shop-intro h1{font-size:clamp(43px,11vw,58px);letter-spacing:-1.5px}.contact-intro p:not(.eyebrow),.gallery-title p:not(.eyebrow),.shop-intro p:not(.eyebrow){font-size:16px;line-height:1.8;margin-top:22px}.contact-intro:after,.shop-intro:after{background:linear-gradient(90deg,#201610e6,#20161088)}.contact-intro:before{background-position:center 75%}.gallery-title:before{background-position:58% 50%}.gallery-title:after{background:#201610a6}.gallery-title{min-height:450px}.shop-intro{display:flex;flex-direction:column;align-items:flex-start;gap:25px;min-height:480px}.shop-intro #view-cart{width:auto;padding-inline:25px}.welcome-photo{padding-right:35px;padding-bottom:25px}.welcome-photo>img:first-child{height:420px}.welcome-photo .welcome-inset{height:155px;bottom:75px;width:48%;border-width:6px}.welcome-photo span{font-size:13px;padding-right:10px}.welcome-copy h2{font-size:40px}.guest-finale,.closing{padding-block:75px}.guest-finale:before,.closing:before{background-position:55% 78%}.stay-team-stories img{height:320px}.stay-team-stories article>div{padding:42px 22px 50px}.catering-photo-pair{gap:14px}.catering-photo-pair img:first-child{height:350px}.catering-photo-pair img:last-child{height:250px;border-width:5px;transform:translateX(-10px);width:calc(100% + 10px)}.journey-hero>img{min-height:0;height:340px;object-position:center 55%}.journey-hero h1{font-size:48px}.cater-hero h1{font-size:48px}.regional-story img{height:340px}.site-footer{padding-top:50px}}
+@media(max-width:360px){.contact-intro h1,.gallery-title h1,.shop-intro h1{font-size:42px}.welcome-photo>img:first-child{height:370px}.welcome-photo .welcome-inset{height:135px}.journey-hero h1{font-size:44px}.cater-hero h1{font-size:44px}}
+@media(prefers-reduced-motion:reduce){.resort-service img{transition:none}.resort-service:hover img{transform:none}}
+@media(max-width:700px){.dining-tabs{flex-wrap:wrap;white-space:normal;overflow:visible;gap:8px;padding:14px 20px}.dining-tabs a{padding:8px 11px;border:1px solid var(--line);min-height:40px;font-size:13px;line-height:1.5}.dining-tabs a[aria-current=page]{border-color:#a55c36;background:#f1e8dc}}
