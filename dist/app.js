@@ -28,6 +28,7 @@ $('#enquiry').addEventListener('submit',e=>{
  window.open(link.href,'_blank','noopener,noreferrer');
 });
 $('#name').addEventListener('input',()=>$('#name').setCustomValidity(''));
+function invalidateEnquiry(){$('#result').hidden=true;$('#copy').hidden=true;$('#copy').textContent='Copy enquiry details';draft=''}$('#enquiry').addEventListener('input',invalidateEnquiry);$('#enquiry').addEventListener('change',invalidateEnquiry);
 $('#copy').addEventListener('click',async e=>{try{await navigator.clipboard.writeText(draft);e.target.textContent='Enquiry copied'}catch{e.target.textContent='Copy unavailable — open WhatsApp above'}});
 }
 const dialog=$('#photo-dialog'),galleryItems=[...document.querySelectorAll('[data-image]')];let currentPhoto=0,photoTrigger;
