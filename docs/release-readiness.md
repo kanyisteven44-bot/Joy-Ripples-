@@ -27,3 +27,11 @@ Added dedicated accommodation, camping and team-building pages; consistent nine-
 Checks: all 11 HTML pages pass local links, headings, IDs and asset checks; contact/cart/catering WhatsApp preparation regression checks pass for both recipients; browser confirms camping preselection and helper text; ten phone iframe layouts (320/390 px for home, stay, camping, team building and contact) have no horizontal overflow. Expanded phone navigation reaches all pages. No WhatsApp messages sent.
 
 Still needed from the resort: exact entrance pin, opening hours, actual room photos/details, approved menu and prices, package inclusions, tent availability and site facilities, booking/deposit/cancellation terms.
+
+## International and investor enquiry presentation
+
+Added About, Investment & Partnerships and printable Resort Overview pages. Added shared utility links, homepage partnership introduction and international phone/time-zone guidance. Dedicated introduction form supports investment, commercial and group enquiries, country, organisation and preferred meeting time, with WhatsApp preparation for either contact. No automatic messages or financial transactions; no visitor details stored.
+
+Validation: 14 pages pass local headings, IDs, links and asset checks. Existing contact/cart/catering regression checks pass. New partnership tests pass for both recipients, international text encoding, required fields and stale result invalidation. Browser verifies enquiry-topic selection and phone layout at 320/390 px for Home, About, Investment and Overview (eight combinations), with no horizontal overflow. Print action and print-specific layout are implemented; actual PDF output was not visually inspected.
+
+This is an investor introduction website, not an evidence-backed investment prospectus. Owner-verified legal identity, operating evidence, funding ask and use of funds remain required for a substantive investment case.
